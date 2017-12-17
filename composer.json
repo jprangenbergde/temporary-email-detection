@@ -1,0 +1,19 @@
+{
+    "name": "jprangenbergde/temporary-email-detection",
+    "description": "Simple and clean detection SDK for temporary emails",
+    "authors": [
+        {
+            "name": "Jens Prangenberg",
+            "email": "mail@jens-prangenberg.de"
+        }
+    ],
+    "homepage": "https://temporary-email-detection.de",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "TemporaryEmailDetection\\": "src/"
+        }
+    }
+}
