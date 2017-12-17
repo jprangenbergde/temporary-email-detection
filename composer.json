@@ -9,6 +9,7 @@
     ],
     "homepage": "https://temporary-email-detection.de",
     "require": {
+        "php": "7",
         "guzzlehttp/guzzle": "^6.3"
     },
     "autoload": {
