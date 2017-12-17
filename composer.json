@@ -1,6 +1,9 @@
 {
     "name": "jprangenbergde/temporary-email-detection",
+    "type": "library",
     "description": "Simple and clean detection SDK for temporary emails",
+    "license": "MIT",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Jens Prangenberg",
@@ -9,7 +12,7 @@
     ],
     "homepage": "https://temporary-email-detection.de",
     "require": {
-        "php": "7",
+        "php": "^7.1",
         "guzzlehttp/guzzle": "^6.3"
     },
     "autoload": {
