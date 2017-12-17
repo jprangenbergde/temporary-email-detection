@@ -1,7 +1,15 @@
 # Temporary Email Detection SDK
 Simple and clean SDK for https://temporary-email-detection.de
 
-# Example
+## Packagist
+https://packagist.org/packages/jprangenbergde/temporary-email-detection
+
+## Installation
+```
+composer require jprangenbergde/temporary-email-detection
+```
+
+## Example
 ```
     <?php
     
