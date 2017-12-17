@@ -1,5 +1,5 @@
 # Temporary Email Detection SDK
-Simple and clean detection SDK for temporary emails
+Simple and clean SDK for temporary email detection
 
 # Example
 ```
