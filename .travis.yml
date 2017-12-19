@@ -10,6 +10,9 @@ php:
     - 7.0
     - 7.1
 
+install:
+  - travis_retry composer install --no-interaction
+
 script:
   - ./vendor/bin/phpunit tests/
 
