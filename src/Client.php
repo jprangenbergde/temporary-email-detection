@@ -29,13 +29,14 @@ class Client
      * @param string $value Email or domain
      *
      * @return bool
+     * @throws Exception
      */
     public function isTemporary(string $value): bool
     {
         try {
             $response = $this->client->request('GET', sprintf('%s/detect/%s', self::API_URL, $value));
         } catch (GuzzleException $exception) {
-            return false;
+            throw Exception::fromMessage($exception->getMessage());
         }
 
         $decoded = json_decode($response->getBody()->getContents(), true);

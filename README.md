@@ -1,6 +1,8 @@
 # Temporary Email Detection SDK
 Simple and clean SDK for https://temporary-email-detection.de
 
+[![Build Status](https://travis-ci.org/jprangenbergde/temporary-email-detection.svg?branch=master)](https://travis-ci.org/jprangenbergde/temporary-email-detection)
+
 ## Packagist
 https://packagist.org/packages/jprangenbergde/temporary-email-detection
 
