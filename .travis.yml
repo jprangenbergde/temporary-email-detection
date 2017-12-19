@@ -9,11 +9,23 @@ git:
 php:
   - 7.1
 
+sudo: false
+
 install:
   - travis_retry composer install --no-interaction
+  - wget -c -nc --retry-connrefused --tries=0 https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar
+  - chmod +x coveralls.phar
+  - php coveralls.phar --version
+
+before_script:
+  - mkdir -p build/logs
+  - ls -al
 
 script:
-  - ./vendor/bin/phpunit tests/
+  - ./vendor/bin/phpunit tests/ --coverage-clover build/logs/clover.xml --whitelist src/
+
+after_success:
+  - travis_retry php coveralls.phar -v
 
 branches:
   only: master
