@@ -11,15 +11,15 @@ composer require jprangenbergde/temporary-email-detection
 
 ## Example
 ```
-    <?php
+<?php
     
-    use TemporaryEmailDetection\ClientFactory;
+use TemporaryEmailDetection\ClientFactory;
     
-    require 'vendor/autoload.php';
+require 'vendor/autoload.php';
     
-    $factory = new ClientFactory();
-    $client = $factory->factorize();
+$factory = new ClientFactory();
+$client = $factory->factorize();
     
-    $isTemporary = $client->isTemporary('mail@0815.ru'); // true
-    $isTemporary = $client->isTemporary('mail@jens-prangenberg.de'); // false
+$isTemporary = $client->isTemporary('mail@0815.ru'); // true
+$isTemporary = $client->isTemporary('jens-prangenberg.de'); // false
  ```
