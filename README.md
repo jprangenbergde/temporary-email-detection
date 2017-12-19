@@ -13,7 +13,7 @@ composer require jprangenbergde/temporary-email-detection
 ```
 
 ## Example
-```
+```php
 <?php
     
 use TemporaryEmailDetection\ClientFactory;
