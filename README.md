@@ -26,3 +26,5 @@ $client = $factory->factorize();
 $isTemporary = $client->isTemporary('mail@0815.ru'); // true
 $isTemporary = $client->isTemporary('jens-prangenberg.de'); // false
  ```
+## Extensionx
+Larvel: https://github.com/Dropelikeit/temporary-email-validator
