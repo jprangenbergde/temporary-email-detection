@@ -27,4 +27,4 @@ $isTemporary = $client->isTemporary('mail@0815.ru'); // true
 $isTemporary = $client->isTemporary('jens-prangenberg.de'); // false
  ```
 ## Extensions
-Larvel: https://github.com/Dropelikeit/temporary-email-validator
+Laravel: https://github.com/Dropelikeit/temporary-email-validator
