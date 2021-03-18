@@ -21,4 +21,3 @@ class ClientFactoryTest extends TestCase
         $this->assertInstanceOf(Client::class, $factory->factorize());
     }
 }
-
