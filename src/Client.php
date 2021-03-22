@@ -1,25 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace TemporaryEmailDetection;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
+use JsonException;
 
 /**
  * @author Jens Prangenberg <mail@jens-prangenberg.de>
  */
-class Client
+final class Client
 {
-    const API_URL = 'https://api.temporary-email-detection.de';
+    private const API_URL = 'https://api.temporary-email-detection.de';
 
-    /**
-     * @var ClientInterface
-     */
-    private $client;
+    private ClientInterface $client;
 
-    /**
-     * @param ClientInterface $client
-     */
     public function __construct(ClientInterface $client)
     {
         $this->client = $client;
@@ -35,12 +32,17 @@ class Client
     {
         try {
             $response = $this->client->request('GET', sprintf('%s/detect/%s', self::API_URL, $value));
-        } catch (GuzzleException $exception) {
+
+            $decoded = json_decode(
+                $response->getBody()->getContents(),
+                true,
+                512,
+                JSON_THROW_ON_ERROR
+            );
+        } catch (GuzzleException | JsonException $exception) {
             throw Exception::fromMessage($exception->getMessage());
         }
 
-        $decoded = json_decode($response->getBody()->getContents(), true);
-
-        return (bool)($decoded['temporary'] ?? false);
+        return (bool) ($decoded['temporary'] ?? false);
     }
 }

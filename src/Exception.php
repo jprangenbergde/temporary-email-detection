@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace TemporaryEmailDetection;
 
 use Exception as StandardException;
@@ -7,7 +9,7 @@ use Exception as StandardException;
 /**
  * @author Jens Prangenberg <mail@jens-prangenberg.de>
  */
-class Exception extends StandardException
+final class Exception extends StandardException
 {
     /**
      * @param string $message

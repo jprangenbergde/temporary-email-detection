@@ -1,36 +1,42 @@
+# Project language
 language: php
 
-os:
-  - linux
-
-git:
-  depth: 1
-
-php:
-  - 7.1
-
+# Allows use container-based infrastructure
 sudo: false
 
+# Start mysql service
+#services:
+#  - mysql
+
+# Cache composer packages so "composer install" is faster
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.4
+    - php: 8.0
+  allow_failures:
+    - php: hhvm
+
+before-install:
+  - composer self-update
+
+# Install composer dependencies,
+# Create database, schema and fixtures
 install:
-  - travis_retry composer install --no-interaction
+  - composer install
   - wget -c -nc --retry-connrefused --tries=0 https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar
   - chmod +x php-coveralls.phar
   - php php-coveralls.phar --version
 
-before_script:
-  - mkdir -p build/logs
-  - ls -al
-
+# Run script
 script:
-  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - phpunit --coverage-clover build/logs/clover.xml
+  - composer cs-check
+  - composer analyze
 
 after_success:
   - travis_retry php php-coveralls.phar -v
-
-branches:
-  only: master
-
-notifications:
-  email:
-    on_success: never
-    on_failure: always
