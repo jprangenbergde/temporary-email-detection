@@ -9,10 +9,7 @@ use GuzzleHttp\Client as GuzzleClient;
  */
 class ClientFactory
 {
-    /**
-     * @return Client
-     */
-    public function factorize(): Client
+    public function factorize(): ClientInterface
     {
         return new Client(new GuzzleClient());
     }

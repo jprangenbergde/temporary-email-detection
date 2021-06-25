@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace TemporaryEmailDetection;
 
-use GuzzleHttp\ClientInterface;
+use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use JsonException;
 
 /**
  * @author Jens Prangenberg <mail@jens-prangenberg.de>
  */
-final class Client
+final class Client implements ClientInterface
 {
     private const API_URL = 'https://api.temporary-email-detection.de';
 
-    private ClientInterface $client;
+    private GuzzleClientInterface $client;
 
-    public function __construct(ClientInterface $client)
+    public function __construct(GuzzleClientInterface $client)
     {
         $this->client = $client;
     }
