@@ -69,3 +69,6 @@ jobs:
 
       - name: "Run PHPStan"
         run: "composer analyze"
+
+      - name: "Run Psalm"
+        run: "composer static-analysis"

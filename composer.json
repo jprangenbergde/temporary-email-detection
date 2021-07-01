@@ -39,7 +39,8 @@
         "check": [
             "@cs-check",
             "@test",
-            "@analyze"
+            "@analyze",
+            "@static-analysis"
         ],
         "cs-check": "php-cs-fixer -vv --dry-run --using-cache=no fix",
         "cs-fix": "php-cs-fixer --using-cache=no fix",
