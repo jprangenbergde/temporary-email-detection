@@ -5,6 +5,7 @@ namespace TemporaryEmailDetectionTests;
 use PHPUnit\Framework\TestCase;
 use TemporaryEmailDetection\Client;
 use TemporaryEmailDetection\ClientFactory;
+use TemporaryEmailDetection\ClientFactoryInterface;
 use TemporaryEmailDetection\ClientInterface;
 
 /**
@@ -16,6 +17,7 @@ class ClientFactoryTest extends TestCase
     {
         $factory = new ClientFactory();
 
+        $this->assertInstanceOf(ClientFactoryInterface::class, $factory);
         $this->assertInstanceOf(ClientInterface::class, $factory->factorize());
         $this->assertInstanceOf(Client::class, $factory->factorize());
     }

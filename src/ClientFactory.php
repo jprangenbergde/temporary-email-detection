@@ -7,7 +7,7 @@ use GuzzleHttp\Client as GuzzleClient;
 /**
  * @author Jens Prangenberg <mail@jens-prangenberg.de>
  */
-class ClientFactory
+final class ClientFactory implements ClientFactoryInterface
 {
     public function factorize(): ClientInterface
     {

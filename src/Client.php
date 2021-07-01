@@ -33,6 +33,7 @@ final class Client implements ClientInterface
         try {
             $response = $this->client->request('GET', sprintf('%s/detect/%s', self::API_URL, $value));
 
+            /** @var array $decoded */
             $decoded = json_decode(
                 $response->getBody()->getContents(),
                 true,
