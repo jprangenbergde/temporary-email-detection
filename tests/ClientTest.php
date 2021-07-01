@@ -23,21 +23,21 @@ final class ClientTest extends TestCase
      */
     public function testIsTemporary(): void
     {
-        /** @var StreamInterface|MockObject $stream */
+        /** @var StreamInterface&MockObject $stream */
         $stream = $this->getMockBuilder(StreamInterface::class)->getMock();
         $stream
             ->expects(self::once())
             ->method('getContents')
             ->willReturn('{"temporary": true}');
 
-        /** @var ResponseInterface|MockObject $response */
+        /** @var ResponseInterface&MockObject $response */
         $response = $this->getMockBuilder(ResponseInterface::class)->getMock();
         $response
             ->expects(self::once())
             ->method('getBody')
             ->willReturn($stream);
 
-        /** @var ClientInterface|MockObject $clientInterface */
+        /** @var ClientInterface&MockObject $clientInterface */
         $clientInterface = $this->getMockBuilder(ClientInterface::class)->getMock();
         $clientInterface
             ->expects(self::once())
@@ -54,21 +54,21 @@ final class ClientTest extends TestCase
      */
     public function testIsNotTemporary(): void
     {
-        /** @var StreamInterface|MockObject $stream */
+        /** @var StreamInterface&MockObject $stream */
         $stream = $this->getMockBuilder(StreamInterface::class)->getMock();
         $stream
             ->expects(self::once())
             ->method('getContents')
             ->willReturn('{"temporary": false}');
 
-        /** @var ResponseInterface|MockObject $response */
+        /** @var ResponseInterface&MockObject $response */
         $response = $this->getMockBuilder(ResponseInterface::class)->getMock();
         $response
             ->expects(self::once())
             ->method('getBody')
             ->willReturn($stream);
 
-        /** @var ClientInterface|MockObject $clientInterface */
+        /** @var ClientInterface&MockObject $clientInterface */
         $clientInterface = $this->getMockBuilder(ClientInterface::class)->getMock();
         $clientInterface
             ->expects(self::once())
@@ -87,7 +87,7 @@ final class ClientTest extends TestCase
     {
         $this->expectException(Exception::class);
 
-        /** @var ClientInterface|MockObject $clientInterface */
+        /** @var ClientInterface&MockObject $clientInterface */
         $clientInterface = $this->getMockBuilder(ClientInterface::class)->getMock();
         $clientInterface
             ->expects(self::once())
@@ -105,21 +105,21 @@ final class ClientTest extends TestCase
     {
         $this->expectException(Exception::class);
 
-        /** @var StreamInterface|MockObject $stream */
+        /** @var StreamInterface&MockObject $stream */
         $stream = $this->getMockBuilder(StreamInterface::class)->getMock();
         $stream
             ->expects(self::once())
             ->method('getContents')
             ->willReturn('example');
 
-        /** @var ResponseInterface|MockObject $response */
+        /** @var ResponseInterface&MockObject $response */
         $response = $this->getMockBuilder(ResponseInterface::class)->getMock();
         $response
             ->expects(self::once())
             ->method('getBody')
             ->willReturn($stream);
 
-        /** @var ClientInterface|MockObject $clientInterface */
+        /** @var ClientInterface&MockObject $clientInterface */
         $clientInterface = $this->getMockBuilder(ClientInterface::class)->getMock();
         $clientInterface
             ->expects(self::once())
