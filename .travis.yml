@@ -18,6 +18,7 @@ matrix:
   include:
     - php: 7.4
     - php: 8.0
+    - php: 8.1
   allow_failures:
     - php: hhvm
 
@@ -37,6 +38,8 @@ script:
   - phpunit --coverage-clover build/logs/clover.xml
   - composer cs-check
   - composer analyze
+  - composer static-analysis
+  - composer test
 
 after_success:
   - travis_retry php php-coveralls.phar -v
