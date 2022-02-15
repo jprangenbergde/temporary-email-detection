@@ -28,5 +28,7 @@ $isTemporary = $client->isTemporary('jens-prangenberg.de'); // false
  ```
 ## Extensions
 Laravel: https://github.com/Dropelikeit/temporary-email-validator
+
 Symfony: https://github.com/Dropelikeit/temporary-email-validator-bundle
+
 Laminas / Mezzio: https://github.com/Dropelikeit/laminas-temporary-email-validator
