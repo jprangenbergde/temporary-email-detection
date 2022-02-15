@@ -10,6 +10,7 @@ use JsonException;
 
 /**
  * @author Jens Prangenberg <mail@jens-prangenberg.de>
+ * @author Marcel Strahl <info@marcel-strahl.de>
  */
 final class Client implements ClientInterface
 {
@@ -25,7 +26,6 @@ final class Client implements ClientInterface
     /**
      * @param string $value Email or domain
      *
-     * @return bool
      * @throws Exception
      */
     public function isTemporary(string $value): bool
