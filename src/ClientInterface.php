@@ -11,6 +11,8 @@ interface ClientInterface
 {
     /**
      * @psalm-param non-empty-string $value
+     *
+     * @throws Exception
      */
     public function isTemporary(string $value): bool;
 }
