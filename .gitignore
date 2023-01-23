@@ -3,4 +3,5 @@ vendor/
 .phpunit.result.cache
 .php_cs
 .phpstan.neon
-.composer.lock
+composer.lock
+.php-cs-fixer.cache

@@ -8,7 +8,7 @@ Simple and clean SDK for https://temporary-email-detection.de
 https://packagist.org/packages/jprangenbergde/temporary-email-detection
 
 ## Installation
-```
+```bash
 composer require jprangenbergde/temporary-email-detection
 ```
 
