@@ -8,6 +8,10 @@
       <directory>./tests</directory>
       <directory>./vendor</directory>
     </exclude>
+    <report>
+      <clover outputFile="build/tests/coverage.xml"/>
+      <text outputFile="php://stdout" showUncoveredFiles="false"/>
+    </report>
   </coverage>
   <testsuite name="SDK Test Suite">
     <directory suffix=".php">./tests</directory>

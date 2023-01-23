@@ -16,12 +16,7 @@ final class Client implements ClientInterface
 {
     private const API_URL = 'https://api.temporary-email-detection.de';
 
-    private GuzzleClientInterface $client;
-
-    public function __construct(GuzzleClientInterface $client)
-    {
-        $this->client = $client;
-    }
+    public function __construct(private GuzzleClientInterface $client) {}
 
     /**
      * @param string $value Email or domain
